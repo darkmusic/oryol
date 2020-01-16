@@ -53,9 +53,9 @@ emscInputMgr::discard() {
 //------------------------------------------------------------------------------
 void
 emscInputMgr::setupCallbacks() {
-    emscripten_set_keydown_callback(0, this, true, emscKeyDown);
-    emscripten_set_keyup_callback(0, this, true, emscKeyUp);
-    emscripten_set_keypress_callback(0, this, true, emscKeyPress);
+    emscripten_set_keydown_callback("#canvas", this, true, emscKeyDown);
+    emscripten_set_keyup_callback("#canvas", this, true, emscKeyUp);
+    emscripten_set_keypress_callback("#canvas", this, true, emscKeyPress);
     emscripten_set_mousedown_callback("#canvas", this, true, emscMouseDown);
     emscripten_set_mouseup_callback("#canvas", this, true, emscMouseUp);
     emscripten_set_mousemove_callback("#canvas", this, true, emscMouseMove);
@@ -75,9 +75,9 @@ emscInputMgr::setupCallbacks() {
 //------------------------------------------------------------------------------
 void
 emscInputMgr::discardCallbacks() {
-    emscripten_set_keydown_callback(0, 0, true, 0);
-    emscripten_set_keyup_callback(0, 0, true, 0);    
-    emscripten_set_keypress_callback(0, 0, true, 0);
+    emscripten_set_keydown_callback("#canvas", 0, true, 0);
+    emscripten_set_keyup_callback("#canvas", 0, true, 0);    
+    emscripten_set_keypress_callback("#canvas", 0, true, 0);
     emscripten_set_mousedown_callback("#canvas", 0, true, 0);
     emscripten_set_mouseup_callback("#canvas", 0, true, 0);
     emscripten_set_mousemove_callback("#canvas", 0, true, 0);
